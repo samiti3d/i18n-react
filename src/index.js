@@ -1,27 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { I18nextProvider } from 'react-i18next';
-import i18next from 'i18next';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { I18nextProvider } from "react-i18next";
+import i18next from "i18next";
 import common_de from "./translations/de/common.json";
 import common_en from "./translations/en/common.json";
+import common_th from "./translations/th/common.json";
 
 i18next.init({
-  interpolation: { escapeValue: false },  
-  lng: 'en',                              // language to use
+  interpolation: { escapeValue: false },
+  lng: "en", // language to use
   resources: {
-      en: {
-          common: common_en               // 'common' is our custom namespace
-      },
-      de: {
-          common: common_de
-      },
-  },
+    en: {
+      common: common_en // 'common' is our custom namespace
+    },
+    de: {
+      common: common_de
+    },
+    th: {
+      common: common_th
+    }
+  }
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>
